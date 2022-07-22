@@ -37,7 +37,8 @@ Each package (e.g. [crime_scene_report](/crime_scene_report) and [person](person
 
 Having an entity relationship diagram for bazel packages seems strange, but it helps to describe the environment:
 
-TODO: Entity relationship diagram..
+![entity_relationship_diagram](https://user-images.githubusercontent.com/17026751/180456692-9c1f385e-bb68-4e8d-85c9-a755eb0d244f.png)
+
 
 ## Hints
 
