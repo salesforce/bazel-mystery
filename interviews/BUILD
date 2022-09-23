@@ -6,11 +6,11 @@
 sh_binary(
   name = "454235",
   srcs = ["454235.sh"],
-  deps = ["//person:amy"]
+  deps = ["//people:amy"]
 )
 
 sh_binary(
   name = "565673",
   srcs = ["565673.sh"],
-  deps = ["//person:mark"]
+  deps = ["//people:mark"]
 )

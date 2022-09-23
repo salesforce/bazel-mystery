@@ -5,7 +5,7 @@
 
 sh_library(
   name = "john",
-  deps = ["//car:74383"],
+  deps = ["//cars:74383"],
   visibility = ["//visibility:public"],
 )
 
@@ -37,14 +37,14 @@ sh_library(
 
 sh_library(
   name = "basil",
-  deps = ["//car:23245"],
+  deps = ["//cars:23245"],
   tags = ["tall"],
   visibility = ["//visibility:public"],
 )
 
 sh_library(
   name = "katie",
-  deps = ["//car:85465"],
+  deps = ["//cars:85465"],
   tags = ["small"],
   visibility = ["//visibility:public"]
 )

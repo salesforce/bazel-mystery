@@ -5,7 +5,7 @@ This document explains how the correct answer can be discovered. Only read on if
 ## Read the Crime Scene Report: 
 
 ```
-bazel build crime_scene_report:missing_basil_089324
+bazel build crime_scene_reports:missing_basil_089324
 
 ***************
 Confidential
@@ -24,20 +24,20 @@ Crime scene reports are build targets (output isn't repeated if already cached).
 ## List all people
 
 ```bash
-bazel query person/...
-//person:amy
-//person:basil
-//person:john
-//person:katie
-//person:mark
+bazel query people/...
+//people:amy
+//people:basil
+//people:john
+//people:katie
+//people:mark
 ```
 
-## Find out what targets depend on these witnesses:
+## Find out what targets depend on the two witnesses (Amy & Mark):
 
 ```
-bazel query 'rdeps(//..., (//person:mark union //person:amy))'
-//interview:454235
-//interview:565673
+bazel query 'rdeps(//..., (//people:mark union //people:amy))'
+//interviews:454235
+//interviews:565673
 ```
 
 This tells us that there were two interviews and gives us the targets for these interviews.
@@ -45,13 +45,13 @@ This tells us that there were two interviews and gives us the targets for these 
 ## Learn about the interviews:
 
 ```
-bazel run //interview:454235
+bazel run //interviews:454235
 
 I saw someone getting into a red car with some basil and they drove away without paying for it.
 ```
 
 ```
-bazel run //interview:565673
+bazel run //interviews:565673
 
 I saw a tall person running quickly to their car with some basil.
 ```
@@ -61,38 +61,38 @@ This tells us that the culprit was a tall person with a red car.
 ## Query for all of the red cars:
 
 ```
-bazel query 'attr(tags, "red", set(//car/...))'
-//car:23245
-//car:85465
+bazel query 'attr(tags, "red", //cars/...)'
+//cars:23245
+//cars:85465
 ```
 
 This tells us that there are two red cars.
 
-## Query to see who depends on the first car:
+## Query to see who depends on the first red car:
 
 ```
-bazel query 'rdeps(//..., //car:23245)'
+bazel query 'rdeps(//..., //cars:23245)'
 ...
-//person:basil
+//people:basil
 ```
 
-This tells us that a person called Basil owns the car.
+This tells us that a person called Basil owns the first red car.
 
-## Query to see who depends on the second car:
+## Query to see who depends on the second red car:
 
 ```
-bazel query 'rdeps(//..., //car:85465)'
+bazel query 'rdeps(//..., //cars:85465)'
 ...
-//person:katie
+//people:katie
 ```
 
-This tells us that a person called Katie owns the car.
+This tells us that a person called Katie owns the second red car.
 
 ## Query to see whether Basil or Katie are tall
 
 ```
-bazel query 'attr(tags, "tall", (//person:basil union //person:katie))'
-//person:basil
+bazel query 'attr(tags, "tall", (//people:basil union //people:katie))'
+//people:basil
 ```
 
 This tells that Basil is tall. We already know that he has a red car.
