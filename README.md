@@ -37,7 +37,7 @@ Each package in this repository (e.g. [crime_scene_reports](/crime_scene_reports
 
 Having an entity relationship diagram for bazel packages seems strange, but for this case it helps to describe the environment and the relationships between targets:
 
-![entity_relationship_diagram](https://user-images.githubusercontent.com/17026751/180456692-9c1f385e-bb68-4e8d-85c9-a755eb0d244f.png)
+![entity_relationship_diagram](https://user-images.githubusercontent.com/17026751/191979711-0d01e94f-fdaf-4fc7-bc61-05e042688d03.png)
 
 
 ## Hints
