@@ -21,7 +21,7 @@ John is a basil farmer. Some of his basil mysteriously went missing. Relevant au
 
 ### Crime Scene Report
 
-The crime scene report for this case is kepd in a secret location. You can uncover it once. However, after that first time of seeing it, you'll need to use some workarounds to see it again. *This is because bazel is very good at caching artifacts that have already been built, so they only need to be built once (until they change or the cache is invalidated)*.
+The crime scene report for this case is kept in a secret location. You can uncover it once. However, after that first time of seeing it, you'll need to use some workarounds to see it again. *This is because bazel is very good at caching artifacts that have already been built, so they only need to be built once (until they change or the cache is invalidated)*.
 
 To see the crime scene report for this case, build the following target:
 
