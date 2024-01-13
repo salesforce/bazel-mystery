@@ -7,6 +7,7 @@ This project aims to help with learning how to use the [Bazel](https://bazel.bui
 ## Prerequisites
 
 - [Bazelisk](https://github.com/bazelbuild/bazelisk) installed. Bazelisk will dynamically use the required version of bazel defined in the `.bazelversion` file.
+- The project is runnable on Linux; guessing on Windows will likely fail.
 
 ## The Case of the Missing Basil 🌱
 
